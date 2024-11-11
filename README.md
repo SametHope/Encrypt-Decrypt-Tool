@@ -1,4 +1,4 @@
-# Encrypt / Decrypt Tool
+# <img src="src/other/favicon.png" alt="favicon" width="32"/> Encrypt / Decrypt Tool
 **Offline web based standalone tool intended for encrypting and decrypting data** from the [meld-cp](https://github.com/meld-cp)'s [Obsidian Encrypt Plugin](https://github.com/meld-cp/obsidian-encrypt) (aka Meld Encrypt) with or without having the plugin or [Obsidian](https://obsidian.md/) installed. **It can also be used independently** from these technologies to encrypt and decrypt data on its own.  
 
 The original plugin has multiple algorithms to handle data with support for obsolete methods and versions.  
