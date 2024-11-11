@@ -1,11 +1,11 @@
 # Encrypt / Decrypt Tool
-This is a fully offline tool intended for encrypting and decrypting data from latest version of [meld-cp](https://github.com/meld-cp)'s [Obsidian Encrypt Plugin](https://github.com/meld-cp/obsidian-encrypt) (aka Meld Encrypt) with or without having the plugin or [Obsidian](https://obsidian.md/) installed. It can also be used independently from these technologies to encrypt and decrypt data on its own.  
+**Offline web based standalone tool intended for encrypting and decrypting data** from the [meld-cp](https://github.com/meld-cp)'s [Obsidian Encrypt Plugin](https://github.com/meld-cp/obsidian-encrypt) (aka Meld Encrypt) with or without having the plugin or [Obsidian](https://obsidian.md/) installed. **It can also be used independently** from these technologies to encrypt and decrypt data on its own.  
 
 The original plugin has multiple algorithms to handle data with support for obsolete methods and versions.  
 This tool on the other hand _is hardcoded to work with data labeled as_ `version 2.0` which uses PBKDF2 with SHA-512 and 210,000 iterations to derive a 256-bit AES-GCM key, generating a random 16-byte salt and 16-byte IV for each operation.
 
-I wrote this on a evening after wondering and worrying about how would I access my encrypted data without access to both Obsidian and the plugin. 
-You can easily store a copy of this repository (or just the [src](src)) in your vault since it’s super small and just relies on a web browser to be present. Without some visual dependencies like [Bootstrap](https://getbootstrap.com/) and [Toastify JS](https://apvarun.github.io/toastify-js/#), the core tool can go as small as just 20 kilobytes since it is just plain text waiting to be interpreted by browsers.
+I wrote this on a evening after wondering and worrying about how would I access to my encrypted data without access to both Obsidian and the plugin. 
+You can easily store a copy of this repository (or just the [src](src)) in your [vault](https://help.obsidian.md/Getting+started/Create+a+vault) since it’s super small and just relies on any web browser to be available. Without some visual dependencies like [Bootstrap](https://getbootstrap.com/) and [Toastify JS](https://apvarun.github.io/toastify-js/#), the core tool can go as small as just **20 kilobytes** since it is just plain text waiting to be interpreted by a browser.
 
 ## Installation / Removal
 This is a self-contained HTML, CSS, JS bundle. There are no special procedures required.
