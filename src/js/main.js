@@ -68,11 +68,31 @@ function displayOutput(output) {
 }
 
 function copyOutput() {
-  const output = outputTextArea.textContent;
-  navigator.clipboard.writeText(output).then(() => {
+  const content = outputTextArea.value;
+  navigator.clipboard.writeText(content).then(() => {
     ToastSuccess("Copied output to clipboard");
   }).catch(err => {
     ToastError("Failed copying output to clipboard");
+    console.error(err);
+  });
+}
+
+function copyInput() {
+  const content = inputTextArea.value;
+  navigator.clipboard.writeText(content).then(() => {
+    ToastSuccess("Copied input to clipboard");
+  }).catch(err => {
+    ToastError("Failed copying input to clipboard");
+    console.error(err);
+  });
+}
+
+function pasteInput() {
+  navigator.clipboard.readText().then(text => {
+    inputTextArea.value = text;
+    ToastSuccess("Pasted clipboard content into input");
+  }).catch(err => {
+    ToastError("Failed to paste content from clipboard, did you give permission?");
     console.error(err);
   });
 }

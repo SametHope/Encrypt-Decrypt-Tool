@@ -56,7 +56,12 @@
           style="white-space: pre-wrap; word-wrap: break-word; font-family: monospace;" readonly></textarea>
 
         <div class="d-flex justify-content-between">
-          <button class="btn btn-outline-primary mt-2 me-2" id="copyBtn" onclick="copyOutput()">Copy Output</button>
+          <div class="d-inline-flex">
+            <button class="btn btn-outline-primary mt-2 me-2" id="copyBtn" onclick="copyInput()">Copy Input</button>
+            <button class="btn btn-outline-primary mt-2 me-2" id="copyBtn" onclick="copyOutput()">Copy Output</button>
+            <button class="btn btn-outline-secondary mt-2 me-2" id="copyBtn" onclick="pasteInput()">Paste Clipboard to
+              Input</button>
+          </div>
           <button class="btn btn-outline-secondary mt-2 ms-2" id="copyBtn" onclick="switchInputOutput()">Switch
             Input/Output Content</button>
         </div>
