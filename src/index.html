@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Encrypt/Decrypt Tool</title>
+  <meta name="description" content="Encrypt or decrypt text using Obsidian Encrypt Plugin's algorithm">
+  <link rel="icon" type="image/png" href="other/favicon.png">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/toastify.css">
+</head>
+
+<body data-bs-theme="dark">
+  <div class="container my-4">
+    <div class="card">
+      <div class="card-body">
+
+        <h1 class="card-title text-center">Encrypt / Decrypt Tool</h1>
+        <p>
+          This is a basic fully offline tool intended for encrypting and decrypting data from latest version of
+          <a href="https://github.com/meld-cp">meld-cp</a>'s
+          <a href="https://github.com/meld-cp/obsidian-encrypt">Obsidian Encrypt Plugin</a> (aka Meld Encrypt)
+          with or without having the plugin or Obsidian installed.
+        </p>
+        <p>
+          The original plugin has multiple algorithms to handle data with support for obsolete methods and versions.
+          This tool on the other hand is <em>hardcoded to work with data labeled as version 2.0</em> which uses
+          PBKDF2 with SHA-512 and 210,000 iterations to derive a 256-bit AES-GCM key, generating a random 16-byte salt
+          and 16-byte IV for each operation.
+        </p>
+
+        <hr />
+
+        <textarea id="inputText" class="form-control my-3 p-2"
+          placeholder="Enter text to encrypt, or paste encoded data to decrypt.." rows="4"></textarea>
+
+        <div class="mb-3 position-relative">
+          <input type="password" id="password" class="form-control p-2" placeholder="Enter password..."
+            oninput="toggleButtonState()">
+          <button class="toggle-password position-absolute top-50 end-0 translate-middle-y me-3"
+            style="font-size: 1.2em; background: none; border: none; margin: 0px; padding: 0px;"
+            onclick="togglePasswordVisibility()">👁️</button>
+        </div>
+
+        <div class="d-flex justify-content-between">
+          <button id="encryptBtn" class="btn btn-primary w-50 me-2 p-2" onclick="encryptText()"
+            disabled>Encrypt</button>
+          <button id="decryptBtn" class="btn btn-secondary w-50 ms-2 p-2" onclick="decryptText()"
+            disabled>Decrypt</button>
+        </div>
+
+        <div id="warning" class="text-danger mt-3" style="display: none;">⚠️ Please enter a valid password!</div>
+
+        <textarea id="output" class="form-control my-3 p-3" placeholder="Output will be shown here" rows="4"
+          style="white-space: pre-wrap; word-wrap: break-word; font-family: monospace;" readonly></textarea>
+
+        <div class="d-flex justify-content-between">
+          <button class="btn btn-outline-primary mt-2 me-2" id="copyBtn" onclick="copyOutput()">Copy Output</button>
+          <button class="btn btn-outline-secondary mt-2 ms-2" id="copyBtn" onclick="switchInputOutput()">Switch
+            Input/Output Content</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <script src="js/CryptoHelper2304.js"></script>
+  <script src="js/toastify.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
